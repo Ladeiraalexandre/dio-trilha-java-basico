@@ -74,3 +74,5 @@ iPhone --|> NavegadorInternet
 
 
 ```
+
+[Exemplo implementação](https://github.com/Ladeiraalexandre/dio-trilha-java-basico/tree/master/DesafioPOO/DesafioPOO/src/com/desafiopoo/model)

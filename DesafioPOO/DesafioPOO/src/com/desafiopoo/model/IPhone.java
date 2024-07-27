@@ -2,17 +2,17 @@ package com.desafiopoo.model;
 
 public class IPhone implements ReprodutorMusical, AparelhoTelefonico, NavegadorInternet {
     
-	private String modelo;
+    private String modelo;
     private int capacidade;
     private String cor;
     
-   public IPhone(String modelo, int capacidade, String cor) {
+    public IPhone(String modelo, int capacidade, String cor) {
 		this.modelo = modelo;
 		this.capacidade = capacidade;
 		this.cor = cor;
-	}
+    }
 
-	// Métodos de ReprodutorMusical
+    // Métodos de ReprodutorMusical
     @Override
     public void tocar() {
         System.out.println("TOCANDO");
