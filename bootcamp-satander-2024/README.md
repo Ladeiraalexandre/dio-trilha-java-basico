@@ -1,78 +1,58 @@
-# [DIO](www.dio.me) - Trilha Java Básico
+# BootCamp Santander 2024
 
-## Autores
-- [Alexandre Ladeira Silva](https://github.com/Ladeiraalexandre)
+Java RESTful API de uma Aplicação Bancária - criada para o Desafio do BootCamp Santander Back-End 2024.
 
-## POO - Desafio
+## Principais Tecnologias
+ - **Java 17**: versão Java mais estável no momento;
+ - **Spring Boot 3**: Versão do Spring Boot, para maximizar a produtividade e autoconfiguração;
+ - **Spring Data JPA**: Ferramenta para simplificar a camada de acesso aos dados, facilitando a integração com bancos de dados SQL;
+ - **OpenAPI (Swagger)**: Para criar uma documentação de API eficaz e fácil de entender usando a OpenAPI (Swagger);
+ - **Railway**: facilita o deploy e monitoramento de nossas soluções na nuvem, além de oferecer diversos bancos de dados como serviço e pipelines de CI/CD.
 
-### Modelagem e Diagramação de um Componente iPhone
+O Figma foi utilizado para a abstração do domínio desta API, sendo útil na análise e projeto da solução.
 
-Diagrama UML do componente iPhone, abrangendo algumas funcionalidades como Reprodutor Musical, Aparelho Telefônico e Navegador na Internet.
+**Aplicação Bancaria**
 
-#### Contexto
-Com base no vídeo de lançamento do iPhone de 2007 (link abaixo), foi realizado a diagramação das classes e interfaces para representar algumas funcionalidades e também um exemplo de implementação com a linguagem Java.
+## Diagrama de Classes (Domínio da API)
 
-[Lançamento iPhone 2007](https://www.youtube.com/watch?v=9ou608QQRq8)
-
-- Minutos relevantes: 00:15 até 00:55
-
-#### Funcionalidades Modeladas
-1. **Reprodutor Musical**
-   - Métodos: `tocar()`, `pausar()`, `selecionarMusica(String musica)`
-2. **Aparelho Telefônico**
-   - Métodos: `ligar(String numero)`, `atender()`, `iniciarCorreioVoz()`
-3. **Navegador na Internet**
-   - Métodos: `exibirPagina(String url)`, `adicionarNovaAba()`, `atualizarPagina()`
-
-### Exemplo de Diagrama UML (utilizando a ferramenta Mermaid)
 ```mermaid
 classDiagram
-%% Define the interfaces
-class ReprodutorMusical {
-	<<interface>>
-    +tocar()
-    +pausar()
-    +selecionarMusica(musica: String)
-}
+  class User {
+    -String name
+    -Account account
+    -Feature[] features
+    -Card card
+    -News[] news
+  }
 
-class AparelhoTelefonico {
-	<<interface>>
-    +ligar(numero: String)
-    +atender()
-    +iniciarCorreioVoz()
-}
+  class Account {
+    -String number
+    -String agency
+    -Number balance
+    -Number limit
+  }
 
-class NavegadorInternet {
-	<<interface>>
-    +exibirPagina(url: String)
-    +adicionarNovaAba()
-    +atualizarPagina()
-}
+  class Feature {
+    -String icon
+    -String description
+  }
 
-%% Define the class that implements the interfaces
-class iPhone {
-    -modelo: String
-    -capacidade: int
-    -cor: String
-    +tocar()
-    +pausar()
-    +selecionarMusica(musica: String)
-    +ligar(numero: String)
-    +atender()
-    +iniciarCorreioVoz()
-    +exibirPagina(url: String)
-    +adicionarNovaAba()
-    +atualizarPagina()
-}
+  class Card {
+    -String number
+    -Number limit
+  }
 
-%% Implement relationships
-iPhone --|> ReprodutorMusical
-iPhone --|> AparelhoTelefonico
-iPhone --|> NavegadorInternet
+  class News {
+    -String icon
+    -String description
+  }
 
-
-
-
+  User "1" *-- "1" Account
+  User "1" *-- "N" Feature
+  User "1" *-- "1" Card
+  User "1" *-- "N" News
 ```
 
-[Exemplo implementação](https://github.com/Ladeiraalexandre/dio-trilha-java-basico/tree/master/DesafioPOO/DesafioPOO/src/com/desafiopoo/model)
+## IMPORTANTE
+
+Este projeto foi construído com o objetivo de fixar os conhecimentos adquiridos durante o bootcamp e tem um viés totalmente voltado para estudos
