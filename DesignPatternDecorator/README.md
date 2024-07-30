@@ -14,9 +14,9 @@ Foi criado um exemplo simples onde temos uma interface **Forma**, uma implementa
 
 #### Explicação
 - **Forma**: Interface comum para todos os tipos de formas.
-- **Circulo**: Implementação concreta da interface `Shape`.
-- **FormaDecorator**: Classe abstrata que implementa a interface `Shape` e contém uma referência a um objeto `Shape`. Esta classe é usada como base para todos os decoradores concretos.
-- **CoresFormaDecorator**: Decorador concreto que estende `ShapeDecorator` e adiciona funcionalidades adicionais (no caso, adiciona uma borda vermelha).
+- **Circulo**: Implementação concreta da interface **Forma**.
+- **FormaDecorator**: Classe abstrata que implementa a interface **Forma** e contém uma referência a um objeto **Forma**. Esta classe é usada como base para todos os decoradores concretos.
+- **CoresFormaDecorator**: Decorador concreto que estende **FormaDecorator** e adiciona funcionalidades adicionais (no caso, adiciona uma borda vermelha).
 
 ### Exemplo de Diagrama UML (utilizando a ferramenta Mermaid)
 ```mermaid
